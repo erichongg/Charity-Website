@@ -3,58 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St. Joseph Mission</title>
-    <link rel="stylesheet" href="styles.css" />
-    
+    <title>St. Joseph Mission Charity</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="nav">
-        <a href="#about">About</a>
-        <a href="#causes">Our Work</a>
-        <a href="#impact">Impact</a>
-        <a href="#donate">Get Involved</a>
-        <a href="#contact">Contact</a>
-    </div>
 
-    <div class="header">
-        <h1>St. Joseph Mission</h1>
-        <p>Empowering Communities, Changing Lives</p>
-        <a href="#donate" class="cta-button">Donate Now</a>
-    </div>
-
-    <div class="container">
-        <div id="about" class="section">
-            <h2>About Us</h2>
-            <p>text</p>
+    <!-- Navigation Bar -->
+    <header class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">St. Joseph Mission Charity</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#causes">Our Work</a>
+                <a href="#donate">Get Involved</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-        <div id="causes" class="section">
-            <h2>Our Causes</h2>
-            <div class="grid">
-                <div class="grid-item">text</div>
-                <div class="grid-item">text</div>
-                <div class="grid-item">text</div>
-                <div class="grid-item">text</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Help Us Make A Difference</h1>
+            <p>Guided by our faith, we strive to provide compassionate care, resources, and support to those most in need.</p>
+            <div class="hero-buttons">
+                <a href="#donate" class="cta-button">Donate</a>
             </div>
         </div>
-        <div id="impact" class="section">
-            <h2>Our Impact</h2>
-            <p>text</p>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-left">
+                <h2>St. Joseph Mission Charity</h2>
+                <p><em>“It’s not how much we give but how much love we put into giving.”</em> — Saint Teresa of Calcutta</p>
+                <p>St. Joseph Mission Charity was founded by a dedicated group of Catholic friends who are deeply committed to living out the principles of Catholic Social Teaching, which emphasizes human dignity, solidarity, and the preferential option for the poor.</p>
+            </div>
+            <div class="about-right">
+                <p>Guided by our faith, we strive to provide compassionate care, resources, and support to those most in need, particularly the impoverished and marginalized communities around the world. Our mission extends globally, with a special focus on assisting individuals and families affected by leprosy.</p>
+                <p>Through the generosity of our donors, volunteers, and faith-based partners, we continue to expand our outreach efforts, ensuring that no one is forgotten or left behind. Whether through medical missions, community development projects, or direct financial assistance, our goal is to be a beacon of light and hope for those suffering the most.</p>
+            </div>
         </div>
-        <div id="donate" class="section">
+    </section>
+
+    <section id="causes" class="work">
+        <h2>Our Work</h2>
+        <p>St. Joseph Mission Charity is committed to providing compassionate care and support to those in need, with a strong focus on faith, safety, and community involvement.</p>
+    
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-icon">✝️</div>
+                <h3>Christian Values</h3>
+                <p>We serve with love and compassion, ensuring that our mission is rooted in faith and care for all.</p>
+            </div>
+            
+            <div class="work-item">
+                <div class="work-icon">🛡️</div>
+                <h3>Safety</h3>
+                <p>Providing a safe and welcoming environment for individuals and families facing hardship.</p>
+            </div>
+    
+            <div class="work-item">
+                <div class="work-icon">🏠</div>
+                <h3>Community</h3>
+                <p>Engaging local volunteers and neighbors to create a strong and supportive community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="donate" class="section donate">
+        <div class="container">
             <h2>Get Involved</h2>
             <p>Your support makes a difference. Join us in creating a better future.</p>
             <a href="#" class="cta-button">Donate Now</a>
         </div>
-        <div id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Email:</p>
-            <p>Phone:</p>
-            <p>Follow us on social media</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and Name -->
+            <div class="footer-left">
+                <img src="logo.jpg" alt="St. Joseph Mission Logo" class="footer-logo">
+            </div>
+
+            <!-- Address -->
+            <div class="footer-center">
+                <h3>ADDRESS</h3>
+                <p>13301 Whitney Cir.<br> Westminster, CA 92683<br>(714)-548-5885</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-right">
+                <h3>Quick Links</h3>
+                <a href="#donate">Get Involved</a>
+                <a href="#contact">Contact Us</a>
+            </div>
         </div>
-    </div>
-    
-    <div class="footer">
-        <p>&copy; 2025 St. Joseph Mission. All Rights Reserved.</p>
-    </div>
+
+        <p class="footer-note">
+            St. Joseph Mission Charity
+        </p>
+    </footer>
+
 </body>
+<script>
+    window.addEventListener("scroll", function() {
+        var navbar = document.querySelector(".nav");
+        if (window.scrollY > 50) { // When scrolled down 50px
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+</script>
 </html>
