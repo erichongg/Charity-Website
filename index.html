@@ -9,17 +9,34 @@
 
 <body>
 
-    <!-- Navigation Bar -->
     <header class="nav">
         <div class="nav-container">
-            <a href="#" class="logo">St. Joseph Mission Charity</a>
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#causes">Our Work</a>
-                <a href="#donate">Get Involved</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <!-- Logo -->
+            <div class="nav-left">
+                <a href="index.html"><img src="logo.jpg" alt="St. Joseph Mission Charity Logo" class="logo"></a>
+            </div>
+    
+            <!-- Organization Name -->
+            <div class="nav-center">
+                <h1>St. Joseph Mission Charity</h1>
+                <p>Love for humanity is everlasting!</p>
+            </div>
+    
+            <!-- Donate Button -->
+            <div class="nav-right">
+                <a href="#donate" class="donate-button">Donate</a>
+            </div>
         </div>
+
+        
+    
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#donate">Get Involved</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -43,41 +60,36 @@
             <div class="about-right">
                 <p>Guided by our faith, we strive to provide compassionate care, resources, and support to those most in need, particularly the impoverished and marginalized communities around the world. Our mission extends globally, with a special focus on assisting individuals and families affected by leprosy.</p>
                 <p>Through the generosity of our donors, volunteers, and faith-based partners, we continue to expand our outreach efforts, ensuring that no one is forgotten or left behind. Whether through medical missions, community development projects, or direct financial assistance, our goal is to be a beacon of light and hope for those suffering the most.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="causes" class="work">
-        <h2>Our Work</h2>
-        <p>St. Joseph Mission Charity is committed to providing compassionate care and support to those in need, with a strong focus on faith, safety, and community involvement.</p>
-    
-        <div class="work-grid">
-            <div class="work-item">
-                <div class="work-icon">✝️</div>
-                <h3>Christian Values</h3>
-                <p>We serve with love and compassion, ensuring that our mission is rooted in faith and care for all.</p>
+                <div class="hero-buttons">
+                    <a href="about.html" class="cta-button">Learn More</a>
+                </div>
             </div>
             
-            <div class="work-item">
-                <div class="work-icon">🛡️</div>
-                <h3>Safety</h3>
-                <p>Providing a safe and welcoming environment for individuals and families facing hardship.</p>
-            </div>
-    
-            <div class="work-item">
-                <div class="work-icon">🏠</div>
-                <h3>Community</h3>
-                <p>Engaging local volunteers and neighbors to create a strong and supportive community.</p>
-            </div>
         </div>
     </section>
 
-    <!-- Get Involved Section -->
-    <section id="donate" class="section donate">
-        <div class="container">
-            <h2>Get Involved</h2>
-            <p>Your support makes a difference. Join us in creating a better future.</p>
-            <a href="#" class="cta-button">Donate Now</a>
+    <section id="videos" class="custom-video-section">
+        <h2 class="custom-video-title">Our Work</h2>
+        <p>St. Joseph Mission Charity is committed to providing compassionate care and support to those in need, with a strong focus on faith, safety, and community involvement.</p>
+        
+        <div class="custom-video-grid">
+            <div class="custom-video-item" onclick="expandVideo(this)">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/PG0WHHR8Trs" frameborder="0" allowfullscreen></iframe>
+                <h3>Video Title</h3>
+                <p>Video text</p>
+            </div>
+            
+            <div class="custom-video-item" onclick="expandVideo(this)">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/e-KszONBCAI" frameborder="0" allowfullscreen></iframe>
+                <h3>Video Title</h3>
+                <p>Video text</p>
+            </div>
+            
+            <div class="custom-video-item" onclick="expandVideo(this)">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/tGJT3hkzNz4" frameborder="0" allowfullscreen></iframe>
+                <h3>Video Title</h3>
+                <p>Video text</p>
+            </div>
         </div>
     </section>
 
@@ -117,6 +129,17 @@
         } else {
             navbar.classList.remove("scrolled");
         }
+
+        function expandVideo(element) {
+            let expanded = document.querySelector('.custom-video-item.expanded');
+            if (expanded) {
+                expanded.classList.remove('expanded');
+            }
+            if (expanded !== element) {
+                element.classList.add('expanded');
+            }
+        }
     });
+
 </script>
 </html>
