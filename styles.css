@@ -159,11 +159,6 @@ body {
     margin-bottom: 15px;
 }
 
-.about-left p {
-    font-style: italic;
-    font-size: 18px;
-    opacity: 0.8;
-}
 
 .learn-more-btn:hover {
     background: #D4AF37;
