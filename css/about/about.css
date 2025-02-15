@@ -1,0 +1,14 @@
+.about-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.about-heading h2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #0A2A2F; /* Adjust color of the underline */
+    color: #333; /* Adjust the text color */
+}
