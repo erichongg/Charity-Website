@@ -1,0 +1,221 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/* Shadow effect when scrolling */
+.nav.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow below navbar */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 50%; /* Ensures the logo is a circle */
+}
+
+.nav-center {
+    text-align: center;
+}
+
+.nav-center h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #0A2A2F;
+}
+
+.nav-center p {
+    font-size: 14px;
+    color: #D4AF37;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 2px solid #D4AF37;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    background: #D4AF37;
+    border-radius: 5px;
+}
+
+/* Footer Section */
+.footer {
+    background: #ffffff; /* Light cream background */
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/* Footer Left: Logo */
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo {
+    max-width: 150px;
+}
+
+/* Footer Center: Address */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-center h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-center p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Footer Right: Quick Links */
+.footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-right h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-right a {
+    display: block;
+    color: #0A2A2F;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-right a:hover {
+    color: #D4AF37; /* Gold */
+}
+
+/* Footer Bottom Note */
+.footer-note {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Donate Button */
+.cta-button:hover {
+    background: #ffdb4d;
+}
+
+
+
+.learn-more-btn:hover {
+    background: #D4AF37;
+    color: #0A2A2F;
+}
+
+.donate-button {
+    background: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.donate-button:hover {
+    background: #ffdb4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .video-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-item {
+        width: 100%;
+    }
+}
