@@ -130,22 +130,13 @@
 
 </body>
 <script>
+    
     window.addEventListener("scroll", function() {
         var navbar = document.querySelector(".nav");
         if (window.scrollY > 50) { // When scrolled down 50px
             navbar.classList.add("scrolled");
         } else {
             navbar.classList.remove("scrolled");
-        }
-
-        function expandVideo(element) {
-            let expanded = document.querySelector('.video-item.expanded');
-            if (expanded) {
-                expanded.classList.remove('expanded');
-            }
-            if (expanded !== element) {
-                element.classList.add('expanded');
-            }
         }
     });
 
