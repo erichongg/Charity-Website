@@ -92,17 +92,5 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 
-    <!-- local script file  -->
-    <script>
-        baguetteBox.run('.compact-gallery', { animation: 'slideIn' });
-        window.addEventListener("scroll", function() {
-            var navbar = document.querySelector(".nav");
-            if (window.scrollY > 50) { // When scrolled down 50px
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        });
-    </script>
 </body>
 </html>
