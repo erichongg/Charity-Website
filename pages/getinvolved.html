@@ -48,9 +48,15 @@
                 <img src="../img/logoo.jpg" alt="St. Joseph Mission Charity Logo" class="logo">
                 <p>Support Our Cause</p>
                 <div class="donate-info">
-                    <p><strong>Zelle</strong></p>
-                    <p><strong>Email:</strong> doanteemail@gmail.com</p>
-                    <p><strong>Phone:</strong> +1 (234) 567-890</p>
+                    <p><strong>Email:</strong> 
+                        <span id="email">donateemail@gmail.com</span>
+                        <button class="copy-btn" onclick="copyToClipboard('email')">📋</button>
+                    </p>
+            
+                    <p><strong>Phone:</strong> 
+                        <span id="phone">+1 (234) 567-890</span>
+                        <button class="copy-btn" onclick="copyToClipboard('phone')">📋</button>
+                    </p>
                 </div>
             </div>
         </div>
@@ -92,5 +98,16 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 
+    <script>
+        function copyToClipboard(id) {
+            var text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied: " + text);
+            }).catch(err => {
+                console.error("Error copying text: ", err);
+            });
+        }
+        </script>
+        
 </body>
 </html>
