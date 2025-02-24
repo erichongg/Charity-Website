@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../css/about/about.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/about/compact-gallery.css">
+    <link rel="stylesheet" href="../css/about/horizontal.css">
+    <link rel="stylesheet" href="../css/donate/donate.css">
+</head>
+<body>
+    <section class="main-content">
+        <div class="nav">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-left">
+                    <a href="index.html"><img src="../img/logo.jpg" alt="St. Joseph Mission Charity Logo" class="logo"></a>
+                </div>
+        
+                <!-- Organization Name -->
+                <div class="nav-center">
+                    <h1>St. Joseph Mission Charity</h1>
+                    <p>Love for humanity is everlasting!</p>
+                </div>
+        
+                <!-- Donate Button -->
+                <div class="nav-right">
+                    <a href="#donate" class="donate-button">Donate</a>
+                </div>
+            </div>
+        
+            <!-- Navigation Links -->
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="donate-info-section">
+            <div class="donate-block">
+                <h2>Support Our Cause</h2>
+                <p>Donate today and make a difference.</p>
+                <div class="donate-info">
+                    <p><strong>Email:</strong> <a href="mailto:donate@example.com">donate@example.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Logo and Name -->
+                <div class="footer-left">
+                    <img src="../img/logo.jpg" alt="St. Joseph Mission Logo" class="footer-logo">
+                </div>
+
+                <!-- Address -->
+                <div class="footer-center">
+                    <h3>ADDRESS</h3>
+                    <p>13301 Whitney Cir.<br> Westminster, CA 92683<br>(714)-548-5885</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-right">
+                    <h3>Quick Links</h3>
+                    <a href="getinvolved.html">Get Involved</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+
+            <p class="footer-note">
+                St. Joseph Mission Charity
+            </p>
+        </footer>
+    </section>
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+    <!-- local script file  -->
+    <script>
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn' });
+        window.addEventListener("scroll", function() {
+            var navbar = document.querySelector(".nav");
+            if (window.scrollY > 50) { // When scrolled down 50px
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>

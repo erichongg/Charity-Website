@@ -65,9 +65,11 @@
       padding-top: 0px;
     }
   }
+
   *{
     font-family: 'Raleway', sans-serif;
   }
+  
   h2{
     color: rgb(37, 28, 28);
     font-family: 'Raleway', sans-serif;
@@ -97,6 +99,13 @@
     background: black;
     opacity: 1;
   }
+
+  .gallery-block .item img {
+    width: 100%;
+    height: 100%; /* Ensures the image fully fills the container */
+    object-fit: cover; /* Prevents stretching, ensuring the image fills without distortion */
+    display: block;
+}
   
   .gallery-block.compact-gallery .item .image{
     transition: 0.8s ease;
