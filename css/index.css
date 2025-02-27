@@ -296,3 +296,19 @@
     color: white;
     cursor: pointer;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-image {
+        max-width: 80%;
+    }
+
+    .event-block {
+        max-width: 90%;
+    }
+}
