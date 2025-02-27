@@ -105,19 +105,27 @@
     <section id="event-section" class="event-upcoming">
         <h2 class="event-title">Event and Upcoming</h2>
         <div class="event-container">
-            <a class="event-link" onclick="openLightbox(); return false;">
+            <!-- Event Image -->
+            <a href="#" class="event-link" onclick="openLightbox(); return false;">
                 <img src="img/event1.jpg" alt="Upcoming Event" class="event-image">
             </a>
+    
+            <!-- Event Details Block -->
+            <div class="event-block">
+                <h3>Upcoming Mission</h3>
+                <div class="event-info">
+                    <p><strong>Missions:</strong> Vietnam and Bangladesh</p>
+                    <p><strong>Date:</strong> 4/1/2025 - 4/15/2025</p>
+                </div>
+            </div>
         </div>
     </section>
+    
     
     <div id="lightbox" class="lightbox">
         <span class="close" onclick="closeLightbox()">&times;</span>
         <img class="lightbox-content" id="lightbox-img">
     </div>
-    
-    
-    
     
 
     <!-- Footer Section -->
