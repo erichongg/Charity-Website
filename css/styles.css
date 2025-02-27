@@ -7,8 +7,8 @@ body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #f8f9fa;
+    color: #0A2A2F;
 }
 
 /* Navigation Bar */
@@ -20,13 +20,17 @@ body {
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
+
 /* Shadow effect when scrolling */
 .nav.scrolled {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow below navbar */
+    padding: 12px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -41,7 +45,14 @@ body {
 .logo {
     height: 80px;
     width: auto;
-    border-radius: 50%; /* Ensures the logo is a circle */
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.nav.scrolled .logo {
+    height: 65px;
 }
 
 .nav-center {
@@ -52,12 +63,19 @@ body {
     font-size: 24px;
     margin: 0;
     color: #0A2A2F;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.nav.scrolled .nav-center h1 {
+    font-size: 20px;
 }
 
 .nav-center p {
     font-size: 14px;
     color: #D4AF37;
     font-style: italic;
+    margin: 5px 0 0 0;
 }
 
 .nav-links {
@@ -65,27 +83,44 @@ body {
     justify-content: center;
     gap: 20px;
     width: 100%;
-    padding-top: 10px;
-    border-top: 2px solid #D4AF37;
+    padding-top: 15px;
+    border-top: 2px solid #FFD700;
 }
 
 .nav-links a {
-    color: black;
+    color: #0A2A2F;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background 0.3s ease-in-out;
+    font-weight: 500;
+    padding: 8px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    background: #D4AF37;
-    border-radius: 5px;
+    background: transparent;
+    color: #0A2A2F;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Footer Section */
 .footer {
-    background: #ffffff; /* Light cream background */
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%) !important;
+    color: white;
+    padding: 50px 20px 30px;
     text-align: center;
     font-size: 16px;
 }
@@ -94,10 +129,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     max-width: 1200px;
     margin: auto;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 /* Footer Left: Logo */
@@ -105,99 +140,143 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    min-width: 250px;
 }
 
 .footer-logo {
-    max-width: 150px;
+    max-width: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Footer Center: Address */
 .footer-center {
     flex: 1;
     text-align: center;
+    min-width: 250px;
 }
 
 .footer-center h3 {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer-center h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-center p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-weight: 300;
 }
 
 /* Footer Right: Quick Links */
 .footer-right {
     flex: 1;
     text-align: center;
+    min-width: 250px;
 }
 
 .footer-right h3 {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer-right h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-right a {
     display: block;
-    color: #0A2A2F;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    margin: 5px 0;
-    transition: color 0.3s ease-in-out;
+    font-weight: 400;
+    margin: 10px 0;
+    transition: all 0.3s ease;
 }
 
 .footer-right a:hover {
-    color: #D4AF37; /* Gold */
+    color: #FFD700;
 }
 
 /* Footer Bottom Note */
 .footer-note {
     font-size: 14px;
-    color: #333;
+    color: rgba(255, 255, 255, 0.7);
     margin-top: 20px;
     max-width: 1000px;
     margin: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 .cta-button {
     display: inline-block;
-    background: #ffcc00;
-    color: black;
-    padding: 15px 30px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #0A2A2F;
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Donate Button */
 .cta-button:hover {
-    background: #ffdb4d;
-}
-
-
-
-.learn-more-btn:hover {
-    background: #D4AF37;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
     color: #0A2A2F;
 }
 
+.learn-more-btn:hover {
+    background: #FFD700;
+    color: #0A2A2F;
+    transform: translateY(-2px);
+}
+
 .donate-button {
-    background: #ffcc00;
-    color: black;
-    padding: 10px 20px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #0A2A2F;
+    padding: 10px 24px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease-in-out;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
 }
 
 .donate-button:hover {
-    background: #ffdb4d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    text-decoration: none;
+    color: #0A2A2F;
 }
 
 /* Responsive Design */
@@ -206,16 +285,52 @@ body {
         flex-direction: column;
         text-align: center;
     }
+    
+    .nav-center h1 {
+        margin-top: 10px;
+    }
+    
+    .nav-right {
+        margin-top: 15px;
+    }
+    
     .about-layout {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+    
     .video-grid {
         flex-direction: column;
         align-items: center;
     }
+    
     .video-item {
         width: 100%;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-links {
+        flex-wrap: wrap;
+    }
+    
+    .nav-links a {
+        margin: 5px;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }

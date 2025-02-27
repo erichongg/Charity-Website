@@ -1,14 +1,282 @@
+/* Enhanced About Page CSS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.about-section {
+    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%);
+    padding: 60px 20px;
+    position: relative;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
 .about-heading {
     text-align: center;
-    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-heading h2 {
+    display: inline-block;
+    font-size: 2.2rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 10px;
+    margin-bottom: 0;
 }
-.about-heading h2 {
+
+.about-heading h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-content {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.about-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Enhanced Gallery Styling */
+.gallery-block {
+    padding-bottom: 80px;
+    padding-top: 30px;
+    background-color: #f8f9fa;
+}
+
+.gallery-block .heading {
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.gallery-block .heading h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #0A2A2F;
     display: inline-block;
-    padding-bottom: 5px;
-    border-bottom: 3px solid #0A2A2F; /* Adjust color of the underline */
-    color: #333; /* Adjust the text color */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.gallery-block .heading h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.gallery-block.compact-gallery .item {
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: black;
+    opacity: 1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-block .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.gallery-block.compact-gallery .item .description {
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.gallery-block.compact-gallery .item .description .description-heading {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.gallery-block.compact-gallery .item .description .description-body {
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+@media (min-width: 576px) {
+    .gallery-block.compact-gallery .item .description {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    
+    .gallery-block.compact-gallery .item a:hover .description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .gallery-block .zoom-on-hover:hover .image {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.hr {
+    border: none;
+    height: 8px;
+    background: linear-gradient(-135deg, #fff 5px, transparent 0) 0 5px, linear-gradient(135deg, #fff 5px, #0A2A2F 0) 0 5px;
+    background-color: transparent;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: 10px 10px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+footer {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    padding: 30px 0;
+    background-color: #0A2A2F;
+    color: white;
+}
+
+footer a {
+    color: #FFD700;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+/* Hero Image Enhancement */
+.hero-image {
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.9;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 12px 30px;
+    color: #0A2A2F;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    animation: fadeIn 1.4s ease-in-out forwards;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text button:hover {
+    background-color: #FFD700;
+    color: #0A2A2F;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 30px 20px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-heading h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
 }
