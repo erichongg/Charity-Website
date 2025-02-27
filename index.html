@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>St. Joseph Mission Charity</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.jpg">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
@@ -37,7 +38,7 @@
         <!-- Navigation Links -->
         <nav class="nav-links">
             <a href="index.html">Home</a>
-            <a href="pages/about.html">About</a>
+            <a href="pages/about.html">Our Work</a>
             <a href="pages/getinvolved.html">Get Involved</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -49,7 +50,7 @@
             <h1>Help Us Make A Difference</h1>
             <p>Guided by our faith, we strive to provide compassionate care, resources, and support to those most in need.</p>
             <div class="hero-buttons">
-                <a href="pages/getinvolved.html" class="cta-button">Donate</a>
+                <a href="#event-section" class="cta-button">Upcoming Events</a>
             </div>
         </div>
     </section>
@@ -68,9 +69,6 @@
                     seeks to uplift all marginalized populations. Through collaboration, advocacy, and an unwavering dedication to service, we strive to create a world where everyone has the oportunity to thrive,
                     supported by a network of faith and love.</p>
                 <p>Through the generosity of our donors, volunteers, and faith-based partners, we continue to expand our outreach efforts, ensuring that no one is forgotten or left behind. Whether through medical missions, community development projects, or direct financial assistance, our goal is to be a beacon of light and hope for those suffering the most.</p>
-                <div class="hero-buttons">
-                    <a href="pages/about.html" class="cta-button">Learn More</a>
-                </div>
             </div>
             
         </div>
@@ -99,7 +97,28 @@
                 <p>Video text</p>
             </div>
         </div>
+        <div class="hero-buttons">
+            <a href="pages/about.html" class="cta-button">Discover More</a>
+        </div>
     </section>
+
+    <section id="event-section" class="event-upcoming">
+        <h2 class="event-title">Event and Upcoming</h2>
+        <div class="event-container">
+            <a class="event-link" onclick="openLightbox(); return false;">
+                <img src="img/event1.jpg" alt="Upcoming Event" class="event-image">
+            </a>
+        </div>
+    </section>
+    
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    
+    
+    
+    
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -139,5 +158,21 @@
             navbar.classList.remove("scrolled");
         }
     });
+
+    function openLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = "img/event1.jpg";
+    lightbox.classList.add("show"); // Adds the scaling effect
+    lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.classList.remove("show"); // Removes scaling effect
+        setTimeout(() => {
+            lightbox.style.display = "none";
+        }, 300); // Delay to match transition effect
+    }
 </script>
 </html>
