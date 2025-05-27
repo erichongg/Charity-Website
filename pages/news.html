@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | St. Joseph Mission Charity</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/news/news.css">
+</head>
+<body>
+
+    <!-- Reuse your site header -->
+    <header class="nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="../index.html"><img src="../img/logo.jpg" alt="Logo" class="logo"></a>
+            </div>
+            <div class="nav-center">
+                <h1>St. Joseph Mission Charity</h1>
+                <p>Love for humanity is everlasting!</p>
+            </div>
+            <div class="nav-right">
+                <a href="getinvolved.html" class="donate-button">Donate</a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="about.html">Our Work</a>
+            <a href="getinvolved.html">Get Involved</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="news-carousel-section">
+        <h2 class="text-center mb-4">Latest News</h2>
+
+        <div class="carousel-wrapper">
+            <!-- <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button> -->
+            
+            <div class="carousel" id="news-carousel">   
+                <div class="news-card">
+                    <h3>Local Catholics Recall the 'People's Pope'</h3>
+                    <p class="date">May 1, 2025</p>
+                    <img src="../img/article1.png" alt="Picture">
+                    <div class="link-container">
+                        <a href="https://www.thefloridacatholic.org/dioceses/palm-beach/local-catholics-fondly-recall-the-people-s-pope/article_b30fcec6-8397-452d-8983-c40587cde5a8.html" 
+                        target="_blank" 
+                        class="read-more-link">
+                            Read Article →
+                        </a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <h3>Chương Trình Gây Quỹ Giúp Người Khốn Khổ - Hội Bác Ái Thánh Giuse</h3>
+                    <p class="date">Apr 25, 2025</p>
+                    <iframe width="100%" height="230" src="https://www.youtube.com/embed/CrFKeRvhRXg" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- Add more news-card items here -->
+            </div>
+
+            <!-- <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>  -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="../img/logo.jpg" alt="Logo" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <h3>ADDRESS</h3>
+                <p>13301 Whitney Cir.<br> Westminster, CA 92683<br>(714)-548-5885</p>
+            </div>
+            <div class="footer-right">
+                <h3>Quick Links</h3>
+                <a href="news.html">News</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <p class="footer-note">St. Joseph Mission Charity</p>
+    </footer>
+
+    <script>
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById("news-carousel");
+        const scrollAmount = 320; // Adjust based on card width + margin
+
+        carousel.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    </script>
+
+
+</body>
+</html>
