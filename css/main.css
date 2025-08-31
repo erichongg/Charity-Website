@@ -1,0 +1,987 @@
+/* Main CSS file for St. Joseph Mission Charity */
+
+/* ===== GENERAL STYLES ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #0A2A2F;
+    overflow-x: hidden; /* Prevent horizontal scroll when sidebar is open */
+}
+
+/* ===== MOBILE SIDEBAR NAVIGATION ===== */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: #0A2A2F;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-sidebar.open {
+    right: 0;
+}
+
+.mobile-sidebar-header {
+    padding: 30px 20px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-sidebar-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+}
+
+.mobile-sidebar-header h3 {
+    color: white;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.mobile-sidebar-header p {
+    color: #FFD700;
+    font-size: 14px;
+    margin: 0;
+    font-style: italic;
+}
+
+.mobile-sidebar-nav {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.mobile-sidebar-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+}
+
+.mobile-sidebar-nav a:hover,
+.mobile-sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: #FFD700;
+    color: #FFD700;
+}
+
+.mobile-sidebar-nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #FFD700;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.mobile-sidebar-nav a:hover::before,
+.mobile-sidebar-nav a.active::before {
+    transform: scaleY(1);
+}
+
+.mobile-sidebar-footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-sidebar-footer .donate-button {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #0A2A2F;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.mobile-sidebar-footer .donate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    text-decoration: none;
+    color: #0A2A2F;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== NAVIGATION BAR ===== */
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Shadow effect when scrolling */
+.nav.scrolled {
+    padding: 12px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.nav.scrolled .logo {
+    height: 65px;
+}
+
+.nav-center {
+    text-align: center;
+}
+
+.nav-center h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #0A2A2F;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.nav.scrolled .nav-center h1 {
+    font-size: 20px;
+}
+
+.nav-center p {
+    font-size: 14px;
+    color: #D4AF37;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding-top: 15px;
+    border-top: 2px solid #FFD700;
+}
+
+.nav-links a {
+    color: #0A2A2F;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: transparent;
+    color: #0A2A2F;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== BUTTONS ===== */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #0A2A2F;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #0A2A2F;
+}
+
+.donate-button {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #0A2A2F;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.donate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    text-decoration: none;
+    color: #0A2A2F;
+}
+
+/* ===== FOOTER SECTION ===== */
+.footer {
+    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%) !important;
+    color: white;
+    padding: 50px 20px 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+/* Footer Left: Logo */
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.footer-logo {
+    max-width: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Center: Address */
+.footer-center {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+}
+
+.footer-center h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer-center h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-center p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Footer Right: Quick Links */
+.footer-right {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+}
+
+.footer-right h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer-right h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-right a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #FFD700;
+}
+
+/* Footer Bottom Note */
+.footer-note {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    .nav-container {
+        width: 95%;
+    }
+    
+    .nav-center h1 {
+        font-size: 22px;
+    }
+    
+    .nav-center p {
+        font-size: 13px;
+    }
+    
+    .logo {
+        height: 70px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 60px;
+    }
+    
+    .nav.scrolled .nav-center h1 {
+        font-size: 18px;
+    }
+}
+
+/* Tablets (iPad, etc.) */
+@media (max-width: 768px) {
+    /* Show mobile menu toggle and hide desktop navigation */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        padding: 15px 10px;
+    }
+    
+    .nav.scrolled {
+        padding: 8px 10px;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .nav-center h1 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    
+    .nav-center p {
+        font-size: 12px;
+    }
+    
+    .nav-right {
+        margin-top: 15px;
+    }
+    
+    /* Hide desktop navigation links on mobile */
+    .nav-links {
+        display: none;
+    }
+    
+    .logo {
+        height: 65px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 55px;
+    }
+    
+    .nav.scrolled .nav-center h1 {
+        font-size: 18px;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    .donate-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .footer {
+        padding: 40px 15px 25px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .footer-logo {
+        max-width: 100px;
+    }
+    
+    .footer-center h3,
+    .footer-right h3 {
+        font-size: 16px;
+    }
+    
+    .footer-center p,
+    .footer-right a {
+        font-size: 14px;
+    }
+}
+
+/* Large Mobile Devices (iPhone Plus, etc.) */
+@media (max-width: 576px) {
+    .mobile-menu-toggle {
+        top: 15px;
+        right: 15px;
+        width: 28px;
+        height: 22px;
+    }
+    
+    .mobile-menu-toggle span {
+        height: 2.5px;
+    }
+    
+    .mobile-sidebar {
+        width: 280px;
+        right: -280px;
+    }
+    
+    .mobile-sidebar-header {
+        padding: 25px 15px 15px;
+    }
+    
+    .mobile-sidebar-header img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .mobile-sidebar-header h3 {
+        font-size: 16px;
+    }
+    
+    .mobile-sidebar-header p {
+        font-size: 13px;
+    }
+    
+    .mobile-sidebar-nav a {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    
+    .mobile-sidebar-footer {
+        padding: 15px;
+    }
+    
+    .mobile-sidebar-footer .donate-button {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+    
+    .nav {
+        padding: 12px 8px;
+    }
+    
+    .nav.scrolled {
+        padding: 6px 8px;
+    }
+    
+    .nav-container {
+        margin-bottom: 12px;
+    }
+    
+    .nav-center h1 {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+    
+    .nav-center p {
+        font-size: 11px;
+    }
+    
+    .logo {
+        height: 60px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 50px;
+    }
+    
+    .nav.scrolled .nav-center h1 {
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .donate-button {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+    
+    .footer {
+        padding: 30px 10px 20px;
+    }
+    
+    .footer-container {
+        gap: 20px;
+    }
+    
+    .footer-logo {
+        max-width: 80px;
+    }
+    
+    .footer-center h3,
+    .footer-right h3 {
+        font-size: 15px;
+    }
+    
+    .footer-center p,
+    .footer-right a {
+        font-size: 13px;
+    }
+    
+    .footer-note {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .mobile-menu-toggle {
+        top: 12px;
+        right: 12px;
+        width: 25px;
+        height: 20px;
+    }
+    
+    .mobile-sidebar {
+        width: 260px;
+        right: -260px;
+    }
+    
+    .mobile-sidebar-header {
+        padding: 20px 12px 12px;
+    }
+    
+    .mobile-sidebar-header img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .mobile-sidebar-header h3 {
+        font-size: 15px;
+    }
+    
+    .mobile-sidebar-header p {
+        font-size: 12px;
+    }
+    
+    .mobile-sidebar-nav a {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    
+    .mobile-sidebar-footer .donate-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .nav {
+        padding: 10px 5px;
+    }
+    
+    .nav.scrolled {
+        padding: 5px 5px;
+    }
+    
+    .nav-container {
+        margin-bottom: 10px;
+    }
+    
+    .nav-center h1 {
+        font-size: 16px;
+        margin-top: 6px;
+    }
+    
+    .nav-center p {
+        font-size: 10px;
+    }
+    
+    .logo {
+        height: 55px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 45px;
+    }
+    
+    .nav.scrolled .nav-center h1 {
+        font-size: 14px;
+    }
+    
+    .cta-button {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    .donate-button {
+        padding: 5px 14px;
+        font-size: 12px;
+    }
+    
+    .footer {
+        padding: 25px 8px 15px;
+    }
+    
+    .footer-container {
+        gap: 15px;
+    }
+    
+    .footer-logo {
+        max-width: 70px;
+    }
+    
+    .footer-center h3,
+    .footer-right h3 {
+        font-size: 14px;
+    }
+    
+    .footer-center p,
+    .footer-right a {
+        font-size: 12px;
+    }
+    
+    .footer-note {
+        font-size: 11px;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 320px) {
+    .mobile-sidebar {
+        width: 240px;
+        right: -240px;
+    }
+    
+    .mobile-sidebar-header img {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .mobile-sidebar-header h3 {
+        font-size: 14px;
+    }
+    
+    .mobile-sidebar-header p {
+        font-size: 11px;
+    }
+    
+    .mobile-sidebar-nav a {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .mobile-sidebar-footer .donate-button {
+        padding: 6px 18px;
+        font-size: 13px;
+    }
+    
+    .nav {
+        padding: 8px 3px;
+    }
+    
+    .nav.scrolled {
+        padding: 4px 3px;
+    }
+    
+    .nav-center h1 {
+        font-size: 14px;
+    }
+    
+    .nav-center p {
+        font-size: 9px;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 40px;
+    }
+    
+    .cta-button {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    
+    .donate-button {
+        padding: 4px 12px;
+        font-size: 11px;
+    }
+    
+    .footer-logo {
+        max-width: 60px;
+    }
+    
+    .footer-center h3,
+    .footer-right h3 {
+        font-size: 13px;
+    }
+    
+    .footer-center p,
+    .footer-right a {
+        font-size: 11px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .mobile-sidebar-header {
+        padding: 15px 20px 10px;
+    }
+    
+    .mobile-sidebar-header img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .mobile-sidebar-header h3 {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+    
+    .mobile-sidebar-header p {
+        font-size: 11px;
+    }
+    
+    .mobile-sidebar-nav a {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .nav {
+        padding: 8px 10px;
+    }
+    
+    .nav-container {
+        margin-bottom: 8px;
+    }
+    
+    .nav-center h1 {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    
+    .nav-center p {
+        font-size: 10px;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    .nav.scrolled .logo {
+        height: 40px;
+    }
+}
+
+/* High DPI Displays (Retina, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo,
+    .footer-logo,
+    .mobile-sidebar-header img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .nav-links a:hover::after {
+        width: 0;
+    }
+    
+    .nav-links a:active::after {
+        width: 100%;
+    }
+    
+    .cta-button:hover {
+        transform: none;
+    }
+    
+    .cta-button:active {
+        transform: translateY(-1px);
+    }
+    
+    .donate-button:hover {
+        transform: none;
+    }
+    
+    .donate-button:active {
+        transform: translateY(-1px);
+    }
+    
+    .mobile-sidebar-nav a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-left-color: transparent;
+        color: white;
+    }
+    
+    .mobile-sidebar-nav a:active {
+        background: rgba(255, 255, 255, 0.1);
+        border-left-color: #FFD700;
+        color: #FFD700;
+    }
+    
+    .mobile-sidebar-footer .donate-button:hover {
+        transform: none;
+    }
+    
+    .mobile-sidebar-footer .donate-button:active {
+        transform: translateY(-1px);
+    }
+}

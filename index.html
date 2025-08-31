@@ -8,11 +8,42 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <img src="img/logo.jpg" alt="St. Joseph Mission Charity Logo">
+            <h3>St. Joseph Mission Charity</h3>
+            <p>Love for humanity is everlasting!</p>
+        </div>
+        
+        <nav class="mobile-sidebar-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="pages/news.html">News</a>
+            <a href="pages/about.html">Our Work</a>
+            <a href="pages/getinvolved.html">Get Involved</a>
+            <a href="pages/contact.html">Contact</a>
+        </nav>
+        
+        <div class="mobile-sidebar-footer">
+            <a href="pages/getinvolved.html" class="donate-button">Donate</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
 
     <header class="nav">
         <div class="nav-container">
@@ -156,32 +187,6 @@
         </p>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
-<script>
-    
-    window.addEventListener("scroll", function() {
-        var navbar = document.querySelector(".nav");
-        if (window.scrollY > 50) { // When scrolled down 50px
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
-    });
-
-    function openLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    lightboxImg.src = "img/event2.png";
-    lightbox.classList.add("show"); // Adds the scaling effect
-    lightbox.style.display = "flex";
-    }
-
-    function closeLightbox() {
-        const lightbox = document.getElementById("lightbox");
-        lightbox.classList.remove("show"); // Removes scaling effect
-        setTimeout(() => {
-            lightbox.style.display = "none";
-        }, 300); // Delay to match transition effect
-    }
-</script>
 </html>

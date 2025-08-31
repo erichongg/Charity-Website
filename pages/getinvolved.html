@@ -8,11 +8,42 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-    <link rel="stylesheet" href="../css/about/about.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/donate/donate.css">
 </head>
 <body>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <img src="../img/logo.jpg" alt="St. Joseph Mission Charity Logo">
+            <h3>St. Joseph Mission Charity</h3>
+            <p>Love for humanity is everlasting!</p>
+        </div>
+        
+        <nav class="mobile-sidebar-nav">
+            <a href="../index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="about.html">Our Work</a>
+            <a href="getinvolved.html" class="active">Get Involved</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <div class="mobile-sidebar-footer">
+            <a href="#donate" class="donate-button">Donate</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
+
     <section class="main-content">
         <div class="nav">
             <div class="nav-container">
@@ -99,17 +130,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-
-    <script>
-        function copyToClipboard(id) {
-            var text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Copied: " + text);
-            }).catch(err => {
-                console.error("Error copying text: ", err);
-            });
-        }
-        </script>
-        
+    <script src="../js/getinvolved.js"></script>
 </body>
 </html>

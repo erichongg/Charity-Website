@@ -80,24 +80,163 @@
     flex-grow: 1; /* Makes all text areas expand evenly */
 }
 
-/* Responsive Adjustments */
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Tablets and Small Laptops */
 @media (max-width: 1024px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+    
+    .contact-title {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+    
     .contact-container {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
     }
 
     .contact-block {
         width: 45%;
+        padding: 25px 20px;
+        min-height: 320px;
+    }
+    
+    .contact-block h3 {
+        font-size: 18px;
+    }
+    
+    .contact-block p {
+        font-size: 15px;
     }
 }
 
+/* Tablets (iPad, etc.) */
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 50px 10px;
+    }
+    
+    .contact-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
     .contact-container {
         flex-direction: column;
+        gap: 20px;
     }
 
     .contact-block {
         width: 90%;
+        padding: 25px 20px;
+        min-height: auto;
+    }
+    
+    .contact-block h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .contact-block p {
+        font-size: 14px;
+    }
+}
+
+/* Large Mobile Devices (iPhone Plus, etc.) */
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 40px 8px;
+    }
+    
+    .contact-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .contact-container {
+        gap: 15px;
+    }
+    
+    .contact-block {
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
+    .contact-block h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+    
+    .contact-block p {
+        font-size: 13px;
+    }
+}
+
+/* Small Mobile Devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .contact-section {
+        padding: 30px 5px;
+    }
+    
+    .contact-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-container {
+        gap: 12px;
+    }
+    
+    .contact-block {
+        width: 98%;
+        padding: 18px 12px;
+    }
+    
+    .contact-block h3 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    
+    .contact-block p {
+        font-size: 12px;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 320px) {
+    .contact-section {
+        padding: 25px 3px;
+    }
+    
+    .contact-title {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    
+    .contact-block {
+        padding: 15px 10px;
+    }
+    
+    .contact-block h3 {
+        font-size: 14px;
+    }
+    
+    .contact-block p {
+        font-size: 11px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .contact-block {
+        cursor: pointer;
+    }
+    
+    .contact-block:active {
+        transform: scale(0.98);
     }
 }

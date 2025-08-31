@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/news/news.css">
 </head>
 <body>
@@ -35,7 +34,34 @@
             <a href="getinvolved.html">Get Involved</a>
             <a href="contact.html">Contact</a>
         </nav>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <img src="../img/logo.jpg" alt="Logo">
+            <h3>St. Joseph Mission Charity</h3>
+        </div>
+        <nav class="mobile-sidebar-nav">
+            <a href="../index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="about.html">Our Work</a>
+            <a href="getinvolved.html">Get Involved</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="mobile-sidebar-footer">
+            <a href="getinvolved.html" class="donate-button">Donate</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
 
     <section class="news-carousel-section">
         <h2 class="text-center mb-4">Latest News</h2>
@@ -88,18 +114,7 @@
         <p class="footer-note">St. Joseph Mission Charity</p>
     </footer>
 
-    <script>
-    function scrollCarousel(direction) {
-        const carousel = document.getElementById("news-carousel");
-        const scrollAmount = 320; // Adjust based on card width + margin
-
-        carousel.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-    </script>
-
+    <script src="../js/news.js"></script>
 
 </body>
 </html>

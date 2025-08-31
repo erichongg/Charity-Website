@@ -109,9 +109,105 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 576px) {
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    .donate-info-section {
+        padding: 50px 15px;
+    }
+    
+    .donate-block {
+        padding: 35px 25px;
+        max-width: 450px;
+    }
+    
+    .donate-block img.logo {
+        width: 90px;
+    }
+    
+    .donate-block p {
+        font-size: 22px;
+        margin: 12px 0 20px;
+    }
+    
+    .donate-info {
+        padding: 20px;
+    }
+    
+    .donate-info p {
+        font-size: 15px;
+    }
+    
+    .donate-info span {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}
+
+/* Tablets (iPad, etc.) */
+@media (max-width: 768px) {
+    .donate-info-section {
+        padding: 40px 10px;
+    }
+    
     .donate-block {
         padding: 30px 20px;
+        max-width: 400px;
+        width: 95%;
+    }
+    
+    .donate-block img.logo {
+        width: 80px;
+        margin-bottom: 15px;
+    }
+    
+    .donate-block p {
+        font-size: 20px;
+        margin: 10px 0 20px;
+    }
+    
+    .donate-info {
+        padding: 18px;
+    }
+    
+    .donate-info p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    
+    .donate-info span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    
+    .copy-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+}
+
+/* Large Mobile Devices (iPhone Plus, etc.) */
+@media (max-width: 576px) {
+    .donate-info-section {
+        padding: 30px 8px;
+    }
+    
+    .donate-block {
+        padding: 25px 15px;
+        max-width: 350px;
+        width: 98%;
+    }
+    
+    .donate-block img.logo {
+        width: 70px;
+        margin-bottom: 12px;
+    }
+    
+    .donate-block p {
+        font-size: 18px;
+        margin: 8px 0 15px;
     }
     
     .donate-info {
@@ -119,7 +215,10 @@
     }
     
     .donate-info p {
+        font-size: 13px;
+        margin: 8px 0;
         flex-direction: column;
+        align-items: center;
     }
     
     .donate-info p strong {
@@ -130,10 +229,113 @@
     .donate-info span {
         width: 100%;
         margin: 5px 0;
+        font-size: 11px;
+        padding: 4px 8px;
     }
     
     .copy-btn {
-        margin-top: 10px;
+        margin-top: 8px;
         margin-left: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+}
+
+/* Small Mobile Devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .donate-info-section {
+        padding: 25px 5px;
+    }
+    
+    .donate-block {
+        padding: 20px 12px;
+        max-width: 320px;
+    }
+    
+    .donate-block img.logo {
+        width: 60px;
+        margin-bottom: 10px;
+    }
+    
+    .donate-block p {
+        font-size: 16px;
+        margin: 6px 0 12px;
+    }
+    
+    .donate-info {
+        padding: 12px;
+    }
+    
+    .donate-info p {
+        font-size: 12px;
+        margin: 6px 0;
+    }
+    
+    .donate-info span {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .copy-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 320px) {
+    .donate-info-section {
+        padding: 20px 3px;
+    }
+    
+    .donate-block {
+        padding: 18px 10px;
+        max-width: 300px;
+    }
+    
+    .donate-block img.logo {
+        width: 55px;
+        margin-bottom: 8px;
+    }
+    
+    .donate-block p {
+        font-size: 14px;
+        margin: 5px 0 10px;
+    }
+    
+    .donate-info {
+        padding: 10px;
+    }
+    
+    .donate-info p {
+        font-size: 11px;
+        margin: 5px 0;
+    }
+    
+    .donate-info span {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+    
+    .copy-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+        margin-top: 5px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .copy-btn:hover {
+        transform: none;
+    }
+    
+    .copy-btn:active {
+        transform: translateY(-1px);
+        background-color: #FFA500;
     }
 }
