@@ -1,24 +1,21 @@
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* fadeIn animation is defined in main.css */
 
 .donate-info-section {
-    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%) !important;
-    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    padding: var(--spacing-3xl) var(--spacing-xl);
     position: relative;
 }
 
 .donate-block {
-    background: #ffffff;
-    color: #0A2A2F;
+    background: var(--background-white);
+    color: var(--text-dark);
     text-align: center;
-    padding: 40px 30px;
-    border-radius: 15px;
-    margin: 20px auto;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) auto;
     width: 90%;
     max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
     animation: fadeIn 1s ease-in-out forwards;
     position: relative;
     overflow: hidden;

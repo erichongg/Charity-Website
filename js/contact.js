@@ -102,15 +102,18 @@ function showNotification(message) {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Contact page loaded successfully');
     
-    // Add click handlers for contact information
+    // Add click handlers for contact information (excluding links)
     const contactBlocks = document.querySelectorAll('.contact-block');
     contactBlocks.forEach(block => {
         const paragraphs = block.querySelectorAll('p');
         paragraphs.forEach(p => {
-            p.style.cursor = 'pointer';
-            p.addEventListener('click', function() {
-                copyToClipboard(this.textContent);
-            });
+            // Only add click handler if paragraph doesn't contain links
+            if (!p.querySelector('a')) {
+                p.style.cursor = 'pointer';
+                p.addEventListener('click', function() {
+                    copyToClipboard(this.textContent);
+                });
+            }
         });
     });
 });

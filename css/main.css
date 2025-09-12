@@ -1,5 +1,149 @@
 /* Main CSS file for St. Joseph Mission Charity */
 
+/* ===== CSS VARIABLES & DESIGN SYSTEM ===== */
+:root {
+    /* Color Palette */
+    --primary-color: #0A2A2F;
+    --secondary-color: #164950;
+    --accent-color: #FFD700;
+    --accent-secondary: #FFA500;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-muted: #4a4a4a;
+    --text-on-dark: #ffffff;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --shadow-text: rgba(0, 0, 0, 0.7);
+    
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.25rem;      /* 4px */
+    --spacing-sm: 0.5rem;       /* 8px */
+    --spacing-md: 1rem;         /* 16px */
+    --spacing-lg: 1.5rem;       /* 24px */
+    --spacing-xl: 2rem;         /* 32px */
+    --spacing-2xl: 3rem;        /* 48px */
+    --spacing-3xl: 4rem;        /* 64px */
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;       /* 4px */
+    --radius-md: 0.5rem;        /* 8px */
+    --radius-lg: 0.75rem;       /* 12px */
+    --radius-xl: 1rem;          /* 16px */
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 var(--spacing-lg) 0;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 var(--spacing-lg) 0;
+    color: var(--text-dark);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--text-dark);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--text-dark);
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--text-dark);
+    font-weight: 400;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-dark { color: var(--text-dark); }
+.text-light { color: var(--text-light); }
+.text-muted { color: var(--text-muted); }
+.text-on-dark { color: var(--text-on-dark); }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+.rounded { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
 /* ===== GENERAL STYLES ===== */
 html {
     scroll-behavior: smooth;
@@ -9,8 +153,10 @@ body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
-    color: #0A2A2F;
+    background: var(--background-light);
+    color: var(--text-dark);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scroll when sidebar is open */
 }
 
@@ -25,7 +171,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 2001;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -59,12 +205,11 @@ body {
     right: -300px;
     width: 300px;
     height: 100vh;
-    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%);
-    z-index: 1000;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    z-index: 2000;
     transition: right 0.3s ease;
     display: flex;
     flex-direction: column;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-sidebar.open {
@@ -86,17 +231,19 @@ body {
 }
 
 .mobile-sidebar-header h3 {
-    color: white;
-    font-size: 18px;
-    margin: 0 0 5px 0;
-    font-weight: 600;
+    color: var(--text-on-dark);
+    font-size: var(--font-size-lg);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .mobile-sidebar-header p {
-    color: #FFD700;
-    font-size: 14px;
+    color: var(--accent-color);
+    font-size: var(--font-size-sm);
     margin: 0;
     font-style: italic;
+    font-weight: 500;
 }
 
 .mobile-sidebar-nav {
@@ -106,21 +253,22 @@ body {
 
 .mobile-sidebar-nav a {
     display: block;
-    color: white;
+    color: var(--text-on-dark);
     text-decoration: none;
-    padding: 15px 25px;
-    font-size: 16px;
-    font-weight: 500;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: 600;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     position: relative;
+    letter-spacing: 0.5px;
 }
 
 .mobile-sidebar-nav a:hover,
 .mobile-sidebar-nav a.active {
-    background: rgba(255, 255, 255, 0.1);
-    border-left-color: #FFD700;
-    color: #FFD700;
+    background: var(--border-light);
+    border-left-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .mobile-sidebar-nav a::before {
@@ -147,23 +295,23 @@ body {
 }
 
 .mobile-sidebar-footer .donate-button {
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    color: #0A2A2F;
-    padding: 12px 30px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-xl);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    box-shadow: var(--shadow-sm);
 }
 
 .mobile-sidebar-footer .donate-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    box-shadow: var(--shadow-lg);
     text-decoration: none;
-    color: #0A2A2F;
+    color: var(--text-dark);
 }
 
 .sidebar-overlay {
@@ -173,7 +321,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 1999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -233,22 +381,24 @@ body {
 }
 
 .nav-center h1 {
-    font-size: 24px;
+    font-size: var(--font-size-2xl);
     margin: 0;
-    color: #0A2A2F;
-    font-weight: 400;
+    color: var(--text-dark);
+    font-weight: 600;
     transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .nav.scrolled .nav-center h1 {
-    font-size: 20px;
+    font-size: var(--font-size-xl);
 }
 
 .nav-center p {
-    font-size: 14px;
-    color: #D4AF37;
+    font-size: var(--font-size-sm);
+    color: var(--accent-color);
     font-style: italic;
     margin: 5px 0 0 0;
+    font-weight: 500;
 }
 
 .nav-links {
@@ -292,61 +442,64 @@ body {
 /* ===== BUTTONS ===== */
 .cta-button {
     display: inline-block;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    color: #0A2A2F;
-    padding: 12px 30px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-xl);
     text-decoration: none;
     border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-xl);
     text-decoration: none;
-    color: #0A2A2F;
+    color: var(--text-dark);
 }
 
 .donate-button {
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    color: #0A2A2F;
-    padding: 10px 24px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-lg);
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: var(--font-size-base);
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.5px;
 }
 
 .donate-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    box-shadow: var(--shadow-lg);
     text-decoration: none;
-    color: #0A2A2F;
+    color: var(--text-dark);
 }
 
 /* ===== FOOTER SECTION ===== */
 .footer {
-    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%) !important;
-    color: white;
-    padding: 50px 20px 30px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    color: var(--text-light);
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
     text-align: center;
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     max-width: 1200px;
     margin: auto;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    gap: 15px;
 }
 
 /* Footer Left: Logo */
@@ -371,12 +524,15 @@ body {
 }
 
 .footer-center h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 15px;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
     position: relative;
     display: inline-block;
-    padding-bottom: 10px;
+    color: var(--text-on-dark);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    padding-bottom: 6px;
 }
 
 .footer-center h3::after {
@@ -391,9 +547,11 @@ body {
 }
 
 .footer-center p {
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 300;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-on-dark);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer Right: Quick Links */
@@ -404,12 +562,12 @@ body {
 }
 
 .footer-right h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     position: relative;
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
 }
 
 .footer-right h3::after {
@@ -425,11 +583,13 @@ body {
 
 .footer-right a {
     display: block;
-    color: white;
+    color: var(--text-on-dark);
     text-decoration: none;
-    font-weight: 400;
-    margin: 10px 0;
+    font-weight: 500;
+    margin: 6px 0;
     transition: all 0.3s ease;
+    font-size: var(--font-size-sm);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-right a:hover {
@@ -438,13 +598,40 @@ body {
 
 /* Footer Bottom Note */
 .footer-note {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 20px;
+    font-size: var(--font-size-sm);
+    color: var(--text-on-dark);
+    margin-top: var(--spacing-xl);
     max-width: 1000px;
     margin: auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+@media (max-width: 1024px) {
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-lg); }
+    h4 { font-size: var(--font-size-base); }
+    p { font-size: var(--font-size-sm); }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: var(--font-size-2xl); }
+    h2 { font-size: var(--font-size-xl); }
+    h3 { font-size: var(--font-size-base); }
+    h4 { font-size: var(--font-size-sm); }
+    p { font-size: var(--font-size-sm); }
+}
+
+@media (max-width: 576px) {
+    h1 { font-size: var(--font-size-xl); }
+    h2 { font-size: var(--font-size-lg); }
+    h3 { font-size: var(--font-size-sm); }
+    h4 { font-size: var(--font-size-xs); }
+    p { font-size: var(--font-size-xs); }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -539,18 +726,19 @@ body {
     }
     
     .footer {
-        padding: 40px 15px 25px;
+        padding: 20px 15px 12px;
     }
     
     .footer-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 25px;
+        gap: 12px;
+        flex-wrap: nowrap;
     }
     
     .footer-left, .footer-center, .footer-right {
-        width: 100%;
-        min-width: auto;
+        flex: 1;
+        min-width: 0;
     }
     
     .footer-logo {
@@ -661,11 +849,17 @@ body {
     }
     
     .footer {
-        padding: 30px 10px 20px;
+        padding: 15px 10px 10px;
     }
     
     .footer-container {
-        gap: 20px;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        flex: 1;
+        min-width: 0;
     }
     
     .footer-logo {
@@ -772,11 +966,17 @@ body {
     }
     
     .footer {
-        padding: 25px 8px 15px;
+        padding: 12px 8px 8px;
     }
     
     .footer-container {
-        gap: 15px;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        flex: 1;
+        min-width: 0;
     }
     
     .footer-logo {

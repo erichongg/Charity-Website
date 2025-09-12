@@ -1,21 +1,61 @@
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* fadeIn animation is defined in main.css */
+
+/* Email Links */
+.email-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+.email-link:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.email-link:active {
+    color: var(--accent-secondary);
+    border-bottom-color: var(--accent-secondary);
+}
+
+/* Phone Links */
+.phone-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+.phone-link:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.phone-link:active {
+    color: var(--accent-secondary);
+    border-bottom-color: var(--accent-secondary);
 }
 
 /* Contact Section */
 .contact-section {
-    background: #f8f9fa;
-    padding: 80px 20px;
+    background: var(--background-light);
+    padding: var(--spacing-3xl) var(--spacing-xl);
     text-align: center;
 }
 
 .contact-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    margin-bottom: 40px;
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-2xl);
     position: relative;
+    letter-spacing: 1px;
 }
 
 .contact-title::after {

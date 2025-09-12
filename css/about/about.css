@@ -1,14 +1,102 @@
 /* Enhanced About Page CSS */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* fadeIn animation is defined in main.css */
+
+/* ===== GALLERY NAVIGATION ===== */
+.gallery-nav-section {
+    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%);
+    padding: 30px 20px;
+    color: white;
 }
 
-.about-section {
-    background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%) !important;
-    padding: 60px 20px;
+.gallery-nav {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gallery-nav-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    -webkit-overflow-scrolling: touch;
     position: relative;
+}
+
+.gallery-nav-buttons::-webkit-scrollbar {
+    display: none; /* WebKit browsers */
+}
+
+
+.gallery-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
     color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.gallery-nav-btn:hover {
+    background: #FFD700;
+    color: #0A2A2F;
+    border-color: #FFD700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.gallery-nav-btn.active {
+    background: #FFD700;
+    color: #0A2A2F;
+    border-color: #FFD700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Gallery Navigation Arrows */
+.gallery-nav-arrow {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+}
+
+.gallery-nav-arrow:hover {
+    background: #FFD700;
+    color: #0A2A2F;
+    border-color: #FFD700;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+
+.about-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    position: relative;
+    color: var(--text-light);
 }
 
 .about-container {
@@ -25,13 +113,18 @@
 
 .about-heading h2 {
     display: inline-block;
-    font-size: 2.2rem;
-    font-weight: bold;
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgb(0, 0, 0);
-    padding-bottom: 10px;
+    color: var(--text-on-dark);
+    padding-bottom: var(--spacing-sm);
     margin-bottom: 0;
+}
+
+/* Override about-heading h2 color for gallery blocks */
+.gallery-block .about-heading h2 {
+    color: #000000 !important;
 }
 
 .about-heading h2::after {
@@ -89,10 +182,25 @@
     font-weight: bold;
     font-size: 1.8rem;
     text-transform: uppercase;
-    color: #0A2A2F;
+    color: #000000 !important;
     display: inline-block;
     position: relative;
     padding-bottom: 10px;
+}
+
+/* Ensure gallery headers are always black */
+.gallery-block h2,
+.gallery-block .heading h2,
+.gallery-block .about-heading h2,
+section.gallery-block h2,
+[id*="ukraine"] h2,
+[id*="haiti"] h2,
+[id*="jamaica"] h2,
+[id*="cambodia"] h2,
+[id*="thailand"] h2,
+[id*="vietnam"] h2,
+[id*="japan"] h2 {
+    color: #000000 !important;
 }
 
 .gallery-block .heading h2::after {
@@ -112,6 +220,8 @@
     opacity: 1;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Fixed height for consistent proportions */
+    position: relative;
 }
 
 .gallery-block .item img {
@@ -120,6 +230,9 @@
     object-fit: cover;
     display: block;
     transition: 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .gallery-block.compact-gallery .item .description {
@@ -177,24 +290,7 @@
     margin: 40px auto;
 }
 
-footer {
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    padding: 30px 0;
-    background-color: #0A2A2F;
-    color: white;
-}
-
-footer a {
-    color: #FFD700;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #FFA500;
-    text-decoration: none;
-}
+/* Footer styles are defined in main.css */
 
 /* Hero Image Enhancement */
 .hero-image {
@@ -256,12 +352,42 @@ footer a:hover {
 
 /* Large Tablets and Small Laptops */
 @media (max-width: 1024px) {
+    .gallery-nav-section {
+        padding: 25px 20px;
+    }
+    
+    .gallery-nav {
+        gap: 12px;
+    }
+    
+    .gallery-nav-arrow {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .gallery-nav-buttons {
+        gap: 12px;
+        padding: 8px 0;
+    }
+    
+    .gallery-nav-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    .gallery-block.compact-gallery .item {
+        height: 280px;
+    }
     .about-section {
         padding: 50px 15px;
     }
     
     .about-heading h2 {
         font-size: 2rem;
+    }
+    
+    .gallery-block .about-heading h2 {
+        color: #000000 !important;
     }
     
     .about-content {
@@ -279,6 +405,7 @@ footer a:hover {
     
     .gallery-block .heading h2 {
         font-size: 1.6rem;
+        color: #000000 !important;
     }
     
     .hero-text h1 {
@@ -292,6 +419,34 @@ footer a:hover {
 
 /* Tablets (iPad, etc.) */
 @media (max-width: 768px) {
+    .gallery-nav-section {
+        padding: 20px 15px;
+    }
+    
+    .gallery-nav {
+        gap: 10px;
+    }
+    
+    .gallery-nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .gallery-nav-buttons {
+        gap: 10px;
+        margin-top: 0;
+        padding: 6px 0;
+    }
+    
+    .gallery-nav-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .gallery-block.compact-gallery .item {
+        height: 250px;
+    }
+    
     .about-section {
         padding: 40px 10px;
     }
@@ -303,6 +458,10 @@ footer a:hover {
     .about-heading h2 {
         font-size: 1.8rem;
         letter-spacing: 1px;
+    }
+    
+    .gallery-block .about-heading h2 {
+        color: #000000 !important;
     }
     
     .about-content {
@@ -327,6 +486,7 @@ footer a:hover {
     
     .gallery-block .heading h2 {
         font-size: 1.5rem;
+        color: #000000 !important;
     }
     
     .hero-image {
@@ -351,6 +511,36 @@ footer a:hover {
 
 /* Large Mobile Devices (iPhone Plus, etc.) */
 @media (max-width: 576px) {
+    .gallery-nav-section {
+        padding: 15px 10px;
+    }
+    
+    .gallery-nav {
+        gap: 8px;
+    }
+    
+    .gallery-nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .gallery-nav-buttons {
+        gap: 8px;
+        margin-top: 0;
+        padding: 5px 0;
+        justify-content: flex-start;
+    }
+    
+    .gallery-nav-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        min-width: 140px;
+    }
+    
+    .gallery-block.compact-gallery .item {
+        height: 220px;
+    }
+    
     .about-section {
         padding: 30px 8px;
     }
@@ -362,6 +552,10 @@ footer a:hover {
     .about-heading h2 {
         font-size: 1.6rem;
         letter-spacing: 0.5px;
+    }
+    
+    .gallery-block .about-heading h2 {
+        color: #000000 !important;
     }
     
     .about-content {
@@ -386,6 +580,7 @@ footer a:hover {
     
     .gallery-block .heading h2 {
         font-size: 1.3rem;
+        color: #000000 !important;
     }
     
     .hero-image {
@@ -410,12 +605,39 @@ footer a:hover {
 
 /* Small Mobile Devices (iPhone SE, etc.) */
 @media (max-width: 375px) {
+    .gallery-nav-section {
+        padding: 12px 8px;
+    }
+    
+    .gallery-nav {
+        gap: 6px;
+    }
+    
+    .gallery-nav-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .gallery-nav-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+        min-width: 120px;
+    }
+    
+    .gallery-block.compact-gallery .item {
+        height: 200px;
+    }
+    
     .about-section {
         padding: 25px 5px;
     }
     
     .about-heading h2 {
         font-size: 1.4rem;
+    }
+    
+    .gallery-block .about-heading h2 {
+        color: #000000 !important;
     }
     
     .about-content {
@@ -435,6 +657,7 @@ footer a:hover {
     
     .gallery-block .heading h2 {
         font-size: 1.2rem;
+        color: #000000 !important;
     }
     
     .hero-image {
@@ -467,6 +690,10 @@ footer a:hover {
         font-size: 1.2rem;
     }
     
+    .gallery-block .about-heading h2 {
+        color: #000000 !important;
+    }
+    
     .about-content {
         padding: 18px 10px;
         margin-bottom: 20px;
@@ -479,6 +706,7 @@ footer a:hover {
     
     .gallery-block .heading h2 {
         font-size: 1.1rem;
+        color: #000000 !important;
     }
     
     .hero-image {
@@ -526,6 +754,24 @@ footer a:hover {
 
 /* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
+    .gallery-nav-buttons {
+        scroll-snap-type: x mandatory;
+        scroll-padding: 20px;
+    }
+    
+    .gallery-nav-btn {
+        scroll-snap-align: center;
+    }
+    
+    .gallery-nav-btn:hover {
+        transform: none;
+    }
+    
+    .gallery-nav-btn:active {
+        transform: translateY(-1px);
+        background-color: #FFD700;
+    }
+    
     .hero-text button:hover {
         transform: none;
     }
