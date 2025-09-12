@@ -530,7 +530,6 @@ body {
     position: relative;
     display: inline-block;
     color: var(--text-on-dark);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
     padding-bottom: 6px;
 }
@@ -551,7 +550,6 @@ body {
     line-height: 1.5;
     font-weight: 400;
     color: var(--text-on-dark);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer Right: Quick Links */
@@ -562,12 +560,13 @@ body {
 }
 
 .footer-right h3 {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: var(--font-size-base);
+    font-weight: 600;
     margin-bottom: 8px;
     position: relative;
     display: inline-block;
     padding-bottom: 6px;
+    color: white;
 }
 
 .footer-right h3::after {
@@ -589,7 +588,6 @@ body {
     margin: 6px 0;
     transition: all 0.3s ease;
     font-size: var(--font-size-sm);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-right a:hover {
@@ -605,7 +603,6 @@ body {
     margin: auto;
     padding-top: var(--spacing-xl);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: 400;
 }
 
