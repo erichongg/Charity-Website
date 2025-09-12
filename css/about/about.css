@@ -4,7 +4,7 @@
 /* ===== GALLERY NAVIGATION ===== */
 .gallery-nav-section {
     background: linear-gradient(135deg, #0A2A2F 0%, #164950 100%);
-    padding: 30px 20px;
+    padding: 10px 5px;
     color: white;
 }
 
@@ -21,7 +21,6 @@
     display: flex;
     justify-content: flex-start;
     gap: 15px;
-    margin-top: 30px;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 10px 0;
