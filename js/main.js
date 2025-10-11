@@ -109,6 +109,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('St. Joseph Mission Charity website loaded successfully');
     
+    // Initialize scroll to top button
+    initScrollToTop();
+    
     // Add any initialization code here
     // For example, initialize lightbox, carousels, etc.
 });
+
+// Scroll to Top Button Functionality
+function initScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    
+    if (!scrollButton) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('show');
+        } else {
+            scrollButton.classList.remove('show');
+        }
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

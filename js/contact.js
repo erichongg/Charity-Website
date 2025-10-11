@@ -102,6 +102,9 @@ function showNotification(message) {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Contact page loaded successfully');
     
+    // Initialize scroll to top button
+    initScrollToTop();
+    
     // Add click handlers for contact information (excluding links)
     const contactBlocks = document.querySelectorAll('.contact-block');
     contactBlocks.forEach(block => {
@@ -117,3 +120,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Scroll to Top Button Functionality
+function initScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    
+    if (!scrollButton) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('show');
+        } else {
+            scrollButton.classList.remove('show');
+        }
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
