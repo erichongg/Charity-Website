@@ -63,41 +63,58 @@
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
 
-    <section class="news-carousel-section">
-        <h2 class="text-center mb-4">Latest News</h2>
+    <section class="news-grid-section">
+        <h2>Latest News</h2>
 
-        <div class="carousel-wrapper">
-            <!-- <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button> -->
-            
-            <div class="carousel" id="news-carousel">   
-                <div class="news-card">
-                    <h3>Local Catholics Recall the 'People's Pope'</h3>
-                    <p class="date">May 1, 2025</p>
-                    <img src="../img/article1.png" alt="Picture">
-                    <div class="link-container">
-                        <a href="https://www.thefloridacatholic.org/dioceses/palm-beach/local-catholics-fondly-recall-the-people-s-pope/article_b30fcec6-8397-452d-8983-c40587cde5a8.html" 
-                        target="_blank" 
-                        class="read-more-link">
+        <div class="news-grid">
+            <div class="news-card-grid">
+                <img src="../img/news/news1ver2.jpg" alt="Rạch Dơi Article">
+                <div class="news-card-content">
+                    <div class="news-card-text">
+                        <h3 class="news-card-title">Rạch Dơi Article</h3>
+                        <p class="news-card-date">Oct 11, 2025</p>
+                    </div>
+                    <div>
+                        <a href="/pages/news/news1.html" class="news-card-button">
                             Read Article →
                         </a>
                     </div>
                 </div>
-                <div class="news-card">
-                    <h3>Chương Trình Gây Quỹ Giúp Người Khốn Khổ - Hội Bác Ái Thánh Giuse</h3>
-                    <p class="date">Apr 25, 2025</p>
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/CrFKeRvhRXg" frameborder="0" allowfullscreen></iframe>
-                    <div class="link-container">
+            </div>
+
+            <div class="news-card-grid">
+                <img src="../img/article1.png" alt="People's Pope Article">
+                <div class="news-card-content">
+                    <div class="news-card-text">
+                        <h3 class="news-card-title">Local Catholics Recall the 'People's Pope'</h3>
+                        <p class="news-card-date">May 1, 2025</p>
+                    </div>
+                    <div>
+                        <a href="https://www.thefloridacatholic.org/dioceses/palm-beach/local-catholics-fondly-recall-the-people-s-pope/article_b30fcec6-8397-452d-8983-c40587cde5a8.html" 
+                        target="_blank" class="news-card-button">
+                            Read Article →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card-grid">
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/CrFKeRvhRXg" frameborder="0" allowfullscreen></iframe>
+                <div class="news-card-content">
+                    <div class="news-card-text">
+                        <h3 class="news-card-title">Chương Trình Gây Quỹ Giúp Người Khốn Khổ</h3>
+                        <p class="news-card-date">Apr 25, 2025</p>
+                    </div>
+                    <div>
                         <a href="https://www.youtube.com/watch?v=CrFKeRvhRXg" 
-                        target="_blank" 
-                        class="read-more-link">
+                        target="_blank" class="news-card-button">
                             Watch Video →
                         </a>
                     </div>
                 </div>
-                <!-- Add more news-card items here -->
             </div>
 
-            <!-- <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>  -->
+            
         </div>
     </section>
 
@@ -120,6 +137,11 @@
         </div>
         <p class="footer-note">St. Joseph Mission Charity</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </button>
 
     <script src="../js/news.js"></script>
 

@@ -138,6 +138,9 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Get Involved page loaded successfully');
     
+    // Initialize scroll to top button
+    initScrollToTop();
+    
     // Add hover effects to copy buttons
     const copyButtons = document.querySelectorAll('.copy-btn');
     copyButtons.forEach(button => {
@@ -161,3 +164,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Scroll to Top Button Functionality
+function initScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    
+    if (!scrollButton) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('show');
+        } else {
+            scrollButton.classList.remove('show');
+        }
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

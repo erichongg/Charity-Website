@@ -40,6 +40,9 @@ function closeMobileMenu() {
 
 // Event listeners for mobile sidebar
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll to top button
+    initScrollToTop();
+    
     // Close sidebar when clicking on sidebar links
     const sidebarLinks = document.querySelectorAll('.mobile-sidebar-nav a');
     sidebarLinks.forEach(link => {
@@ -53,3 +56,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Scroll to Top Button Functionality
+function initScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    
+    if (!scrollButton) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('show');
+        } else {
+            scrollButton.classList.remove('show');
+        }
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

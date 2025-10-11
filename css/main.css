@@ -175,7 +175,6 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    transition: all 0.3s ease;
 }
 
 .mobile-menu-toggle span {
@@ -341,18 +340,11 @@ body {
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: relative;
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
-/* Shadow effect when scrolling */
-.nav.scrolled {
-    padding: 12px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+/* Static navigation - no scroll effects */
 
 .nav-container {
     display: flex;
@@ -368,12 +360,7 @@ body {
     width: auto;
     border-radius: 50%;
     border: 2px solid #f0f0f0;
-    transition: all 0.3s ease;
     object-fit: cover;
-}
-
-.nav.scrolled .logo {
-    height: 65px;
 }
 
 .nav-center {
@@ -385,12 +372,7 @@ body {
     margin: 0;
     color: var(--text-dark);
     font-weight: 600;
-    transition: all 0.3s ease;
     letter-spacing: 0.5px;
-}
-
-.nav.scrolled .nav-center h1 {
-    font-size: var(--font-size-xl);
 }
 
 .nav-center p {
@@ -416,7 +398,6 @@ body {
     font-weight: 500;
     padding: 8px 15px;
     position: relative;
-    transition: all 0.3s ease;
 }
 
 .nav-links a::after {
@@ -651,13 +632,6 @@ body {
         height: 70px;
     }
     
-    .nav.scrolled .logo {
-        height: 60px;
-    }
-    
-    .nav.scrolled .nav-center h1 {
-        font-size: 18px;
-    }
 }
 
 /* Tablets (iPad, etc.) */
@@ -671,9 +645,6 @@ body {
         padding: 15px 10px;
     }
     
-    .nav.scrolled {
-        padding: 8px 10px;
-    }
     
     .nav-container {
         flex-direction: column;
@@ -704,13 +675,6 @@ body {
         height: 65px;
     }
     
-    .nav.scrolled .logo {
-        height: 55px;
-    }
-    
-    .nav.scrolled .nav-center h1 {
-        font-size: 18px;
-    }
     
     .cta-button {
         padding: 10px 20px;
@@ -806,9 +770,6 @@ body {
         padding: 12px 8px;
     }
     
-    .nav.scrolled {
-        padding: 6px 8px;
-    }
     
     .nav-container {
         margin-bottom: 12px;
@@ -827,13 +788,6 @@ body {
         height: 60px;
     }
     
-    .nav.scrolled .logo {
-        height: 50px;
-    }
-    
-    .nav.scrolled .nav-center h1 {
-        font-size: 16px;
-    }
     
     .cta-button {
         padding: 8px 16px;
@@ -923,9 +877,6 @@ body {
         padding: 10px 5px;
     }
     
-    .nav.scrolled {
-        padding: 5px 5px;
-    }
     
     .nav-container {
         margin-bottom: 10px;
@@ -944,13 +895,6 @@ body {
         height: 55px;
     }
     
-    .nav.scrolled .logo {
-        height: 45px;
-    }
-    
-    .nav.scrolled .nav-center h1 {
-        font-size: 14px;
-    }
     
     .cta-button {
         padding: 6px 14px;
@@ -1029,9 +973,6 @@ body {
         padding: 8px 3px;
     }
     
-    .nav.scrolled {
-        padding: 4px 3px;
-    }
     
     .nav-center h1 {
         font-size: 14px;
@@ -1045,9 +986,6 @@ body {
         height: 50px;
     }
     
-    .nav.scrolled .logo {
-        height: 40px;
-    }
     
     .cta-button {
         padding: 5px 12px;
@@ -1121,9 +1059,6 @@ body {
         height: 50px;
     }
     
-    .nav.scrolled .logo {
-        height: 40px;
-    }
 }
 
 /* High DPI Displays (Retina, etc.) */
@@ -1180,5 +1115,60 @@ body {
     
     .mobile-sidebar-footer .donate-button:active {
         transform: translateY(-1px);
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+/* Mobile responsive for scroll button */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }

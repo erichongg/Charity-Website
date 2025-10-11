@@ -95,3 +95,123 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Gallery Navigation Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const navButtons = document.querySelectorAll('.gallery-nav-btn');
+    const gallerySections = document.querySelectorAll('.gallery-block');
+    const leftArrow = document.getElementById('navArrowLeft');
+    const rightArrow = document.getElementById('navArrowRight');
+    const navButtonsContainer = document.getElementById('galleryNavButtons');
+    
+    let currentIndex = 0;
+    
+    // Hide all sections except the first one
+    gallerySections.forEach((section, index) => {
+        if (index !== 0) {
+            section.style.display = 'none';
+        }
+    });
+    
+    // Update arrow states (no longer needed for looping, but keeping for visual consistency)
+    function updateArrowStates() {
+        // Arrows are never disabled in looping mode
+        leftArrow.disabled = false;
+        rightArrow.disabled = false;
+    }
+    
+    // Scroll to specific button
+    function scrollToButton(index) {
+        const button = navButtons[index];
+        if (button) {
+            button.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest', 
+                inline: 'center' 
+            });
+        }
+    }
+    
+    // Switch to section
+    function switchToSection(index) {
+        currentIndex = index;
+        
+        // Remove active class from all buttons
+        navButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to current button
+        navButtons[currentIndex].classList.add('active');
+        
+        // Hide all sections
+        gallerySections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show target section
+        const targetSection = navButtons[currentIndex].getAttribute('data-section');
+        const targetElement = document.getElementById(targetSection);
+        if (targetElement) {
+            targetElement.style.display = 'block';
+        }
+        
+        updateArrowStates();
+    }
+    
+    // Left arrow click (with looping)
+    leftArrow.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            switchToSection(currentIndex - 1);
+        } else {
+            // Loop to the last item
+            switchToSection(navButtons.length - 1);
+        }
+        scrollToButton(currentIndex);
+    });
+    
+    // Right arrow click (with looping)
+    rightArrow.addEventListener('click', function() {
+        if (currentIndex < navButtons.length - 1) {
+            switchToSection(currentIndex + 1);
+        } else {
+            // Loop to the first item
+            switchToSection(0);
+        }
+        scrollToButton(currentIndex);
+    });
+    
+    // Add click event listeners to navigation buttons
+    navButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            switchToSection(index);
+        });
+    });
+    
+    // Initialize arrow states
+    updateArrowStates();
+    
+    // Initialize scroll to top button
+    initScrollToTop();
+});
+
+// Scroll to Top Button Functionality
+function initScrollToTop() {
+    const scrollButton = document.getElementById('scrollToTop');
+    
+    if (!scrollButton) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollButton.classList.add('show');
+        } else {
+            scrollButton.classList.remove('show');
+        }
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

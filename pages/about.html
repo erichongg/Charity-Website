@@ -83,7 +83,8 @@
                     </svg>
                 </button>
                 <div class="gallery-nav-buttons" id="galleryNavButtons">
-                    <button class="gallery-nav-btn active" data-section="ukraine">Ukraine 2022-2024</button>
+                    <button class="gallery-nav-btn active" data-section="lasvegas">Las Vegas 2025</button>
+                    <button class="gallery-nav-btn" data-section="ukraine">Ukraine 2022-2024</button>
                     <button class="gallery-nav-btn" data-section="cambodia">Cambodia 2023</button>
                     <button class="gallery-nav-btn" data-section="jamaica">Jamaica 2014</button>
                     <button class="gallery-nav-btn" data-section="vietnam">Vietnam 2009-Present</button>
@@ -96,6 +97,98 @@
                         <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Las Vegas 2025 Gallery Section -->
+    <section class="gallery-block compact-gallery" id="lasvegas">
+        <div class="container">
+            <div class="about-heading">
+                <h2>Las Vegas 2025</h2>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0203.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0203.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0204.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0204.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0210.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0210.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0223.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0223.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0250.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0250.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0254.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0254.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0260.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0260.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_2179.JPEG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_2179.JPEG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a class="lightbox" href="../img/Las Vegas 2025/IMG_0156.JPG">
+                        <img class="img-fluid image" src="../img/Las Vegas 2025/IMG_0156.JPG">
+                        <span class="description">
+                            <span class="description-heading"> </span>
+                            <span class="description-body"> </span>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -772,102 +865,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
     <script src="../js/about.js"></script>
     
-    <script>
-        // Gallery Navigation Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navButtons = document.querySelectorAll('.gallery-nav-btn');
-            const gallerySections = document.querySelectorAll('.gallery-block');
-            const leftArrow = document.getElementById('navArrowLeft');
-            const rightArrow = document.getElementById('navArrowRight');
-            const navButtonsContainer = document.getElementById('galleryNavButtons');
-            
-            let currentIndex = 0;
-            
-            // Hide all sections except the first one
-            gallerySections.forEach((section, index) => {
-                if (index !== 0) {
-                    section.style.display = 'none';
-                }
-            });
-            
-            // Update arrow states (no longer needed for looping, but keeping for visual consistency)
-            function updateArrowStates() {
-                // Arrows are never disabled in looping mode
-                leftArrow.disabled = false;
-                rightArrow.disabled = false;
-            }
-            
-            // Scroll to specific button
-            function scrollToButton(index) {
-                const button = navButtons[index];
-                if (button) {
-                    button.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest', 
-                        inline: 'center' 
-                    });
-                }
-            }
-            
-            // Switch to section
-            function switchToSection(index) {
-                currentIndex = index;
-                
-                // Remove active class from all buttons
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to current button
-                navButtons[currentIndex].classList.add('active');
-                
-                // Hide all sections
-                gallerySections.forEach(section => {
-                    section.style.display = 'none';
-                });
-                
-                // Show target section
-                const targetSection = navButtons[currentIndex].getAttribute('data-section');
-                const targetElement = document.getElementById(targetSection);
-                if (targetElement) {
-                    targetElement.style.display = 'block';
-                }
-                
-                updateArrowStates();
-            }
-            
-            // Left arrow click (with looping)
-            leftArrow.addEventListener('click', function() {
-                if (currentIndex > 0) {
-                    switchToSection(currentIndex - 1);
-                } else {
-                    // Loop to the last item
-                    switchToSection(navButtons.length - 1);
-                }
-                scrollToButton(currentIndex);
-            });
-            
-            // Right arrow click (with looping)
-            rightArrow.addEventListener('click', function() {
-                if (currentIndex < navButtons.length - 1) {
-                    switchToSection(currentIndex + 1);
-                } else {
-                    // Loop to the first item
-                    switchToSection(0);
-                }
-                scrollToButton(currentIndex);
-            });
-            
-            // Add click event listeners to navigation buttons
-            navButtons.forEach((button, index) => {
-                button.addEventListener('click', function() {
-                    switchToSection(index);
-                });
-            });
-            
-            // Initialize arrow states
-            updateArrowStates();
-        });
-    </script>
 </body>
 </html>
